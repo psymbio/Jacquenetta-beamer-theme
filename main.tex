@@ -1,0 +1,339 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Jacquenetta}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+% Save code blocks as boxes to avoid fragile-frame conflicts
+\newsavebox{\codeboxa}
+\newsavebox{\codeboxb}
+
+% === Metadata ===================================================
+\title{Jacquenetta}
+\subtitle{A modern Beamer theme for scientific presentations}
+\author{Samuel Manchajm}
+\institute{GitHub --- Jacquenetta-beamer-theme}
+\date{\today}
+
+% === Logo test (colorbox, no external file needed) =============
+\logo{%
+  \colorbox{jqdark}{%
+    \textcolor{white}{%
+      \fontsize{6}{7}\selectfont\bfseries\quad MY INSTITUTION\quad%
+    }%
+  }%
+}
+
+\begin{document}
+
+% ============================================================
+% TITLE
+% ============================================================
+\titleframe
+\logo{}  % <-- retire le logo du footer après le titre
+          % Supprime cette ligne pour le garder sur tous les slides
+
+% ============================================================
+\section{Getting Started}
+% ============================================================
+
+\begin{frame}{Minimal example}
+    Use the Jacquenetta theme with a single line in your preamble:
+
+    \vspace{0.1cm}
+    {\small\ttfamily
+    \textbackslash documentclass[aspectratio=169]\{beamer\}\\
+    \textbackslash usetheme\{Jacquenetta\}\\[2pt]
+    \textbackslash title\{My Presentation\}\\
+    \textbackslash author\{Jane Doe\}\\
+    \textbackslash institute\{University of Somewhere\}\\[2pt]
+    \textbackslash begin\{document\}\\
+    \quad\textbackslash titleframe\\
+    \quad\textbackslash begin\{frame\}\{Hello, world!\}\\
+    \quad\quad Your content here.\\
+    \quad\textbackslash end\{frame\}\\
+    \textbackslash end\{document\}
+    }
+\end{frame}
+
+\begin{frame}{Theme options}
+    Jacquenetta supports the following options:
+
+    \vspace{0.3cm}
+    \begin{tabular}{ll}
+        \toprule
+        \textbf{Option} & \textbf{Effect} \\
+        \midrule
+        \texttt{accent=<color>} & Change the accent color \\
+        \texttt{noborder}       & Disable the signature border \\
+        \bottomrule
+    \end{tabular}
+
+    \vspace{0.5cm}
+    {\small\ttfamily
+    \textbackslash usetheme[accent=teal]\{Jacquenetta\}\\
+    \textbackslash usetheme[noborder]\{Jacquenetta\}\\
+    \textbackslash usetheme[accent=jqorange, noborder]\{Jacquenetta\}
+    }
+\end{frame}
+
+% ============================================================
+\section{Typography}
+% ============================================================
+
+\sectionframe{01}{Typography}
+
+\begin{frame}{Font styles}
+    Jacquenetta uses \textbf{Helvetica} for body text and
+    \textit{serif fonts} for mathematics.
+
+    \vspace{0.4cm}
+    \begin{itemize}
+        \item Regular text for general content
+        \item \textbf{Bold text} for emphasis and headings
+        \item \textit{Italic text} for definitions or foreign terms
+        \item \texttt{Monospace} for code and technical identifiers
+        \item \alert{Alerted text} for drawing attention
+    \end{itemize}
+
+    \vspace{0.4cm}
+    {\footnotesize Footnote-sized text is also available for captions
+    and annotations.}
+\end{frame}
+
+\begin{frame}{Mathematics}
+    Jacquenetta preserves serif fonts in math mode for readability.
+
+    \vspace{0.2cm}
+    The posterior probability via Bayes' theorem:
+    \[
+        P(\theta \mid \mathcal{D}) =
+        \frac{P(\mathcal{D} \mid \theta)\, P(\theta)}
+             {P(\mathcal{D})}
+    \]
+
+    An inline example: given $n$ samples, the MLE is
+    $\hat{\theta} = \arg\max_\theta \mathcal{L}(\theta; x_1, \dots, x_n)$.
+
+    \vspace{0.2cm}
+    Multi-line alignment:
+    \begin{align}
+        \mathcal{L}(\theta)
+            &= \textstyle\sum_{i=1}^{n} \log p(x_i \mid \theta)
+        &
+        \nabla_\theta \mathcal{L}
+            &= \textstyle\sum_{i=1}^{n}
+                \nabla_\theta \log p(x_i \mid \theta)
+    \end{align}
+\end{frame}
+
+% ============================================================
+\section{Elements}
+% ============================================================
+
+\sectionframe{02}{Elements}
+
+\begin{frame}{Lists}
+    \begin{columns}[T]
+        \begin{column}{0.45\textwidth}
+            \textbf{Itemize}
+            \begin{itemize}
+                \item First level item
+                \item Another item
+                    \begin{itemize}
+                        \item Second level
+                        \item Nested item
+                    \end{itemize}
+                \item Back to first level
+            \end{itemize}
+        \end{column}
+
+        \begin{column}{0.45\textwidth}
+            \textbf{Enumerate}
+            \begin{enumerate}
+                \item First step
+                \item Second step
+                    \begin{enumerate}
+                        \item Sub-step A
+                        \item Sub-step B
+                    \end{enumerate}
+                \item Third step
+            \end{enumerate}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.4cm}
+    \textbf{Description}
+    \begin{description}
+        \item[Precision] Fraction of true positives among predicted positives.
+        \item[Recall] Fraction of true positives among actual positives.
+    \end{description}
+\end{frame}
+
+\begin{frame}{Blocks}
+    All blocks share a unified left-border style, distinguished by color.
+
+    \begin{block}{Default block}
+        Used for general information, definitions, or neutral content.
+    \end{block}
+
+    \begin{alertblock}{Alert block}
+        Used to highlight warnings, caveats, or important remarks.
+    \end{alertblock}
+
+    \begin{exampleblock}{Example block}
+        Used for examples, demonstrations, or supporting evidence.
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Custom environments}
+    \begin{problock}{Problock --- callout with accent border}
+        Ideal for theorems, definitions, or key takeaways.
+        For any events $A$ and $B$ with $P(B) > 0$:\;
+        $P(A \mid B) = {P(B \mid A)\, P(A)}/{P(B)}$
+    \end{problock}
+
+    \begin{highlightbox}
+        \textbf{Highlightbox} --- an orange callout for observations,
+        warnings, or results that need to stand out.
+    \end{highlightbox}
+
+    \vspace{0.2cm}
+    Both use the same left-border language as standard blocks,
+    but with tcolorbox for richer content (math, nested lists, etc.).
+\end{frame}
+
+\begin{frame}{Tables}
+    Use \texttt{booktabs} for clean, professional tables.
+
+    \vspace{0.4cm}
+    \centering
+    \begin{tabular}{lccc}
+        \toprule
+        \textbf{Model} & \textbf{Accuracy} & \textbf{F1 Score} &
+        \textbf{Time (s)} \\
+        \midrule
+        Logistic Regression & 0.89 & 0.87 & 0.3 \\
+        Random Forest       & 0.93 & 0.91 & 2.1 \\
+        Neural Network      & 0.95 & 0.94 & 15.7 \\
+        \textbf{Ensemble}   & \textbf{0.96} & \textbf{0.95} & 18.1 \\
+        \bottomrule
+    \end{tabular}
+\end{frame}
+
+\begin{frame}{Columns}
+    \begin{columns}[T]
+        \begin{column}{0.48\textwidth}
+            \begin{problock}{Left column}
+                Columns are useful for placing text and figures
+                side by side, or for comparing two approaches.
+            \end{problock}
+
+            \vspace{0.2cm}
+            Key advantages:
+            \begin{itemize}
+                \item Better use of slide space
+                \item Visual separation of ideas
+                \item Natural comparison layout
+            \end{itemize}
+        \end{column}
+
+        \begin{column}{0.48\textwidth}
+            \begin{problock}{Right column}
+                You can mix any content: text, math, figures,
+                tables, or code listings.
+            \end{problock}
+
+            \vspace{0.2cm}
+            A quick formula:
+            \[
+                \text{ELBO} = \mathbb{E}_{q}[\log p(x \mid z)]
+                - D_{\text{KL}}(q \| p)
+            \]
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% ============================================================
+\section{Colors}
+% ============================================================
+
+\sectionframe{03}{Colors}
+
+\begin{frame}{Color palette}
+    Jacquenetta defines four theme colors:
+
+    \vspace{0.4cm}
+    \begin{columns}[T]
+        \begin{column}{0.22\textwidth}
+            \centering
+            \begin{tikzpicture}
+                \fill[jqdark] (0,0) rectangle (2.5,1.5);
+                \node[white] at (1.25,0.75) {\textbf{Dark}};
+            \end{tikzpicture}\\[4pt]
+            {\small\texttt{\#121212}}
+        \end{column}
+        \begin{column}{0.22\textwidth}
+            \centering
+            \begin{tikzpicture}
+                \fill[jqgray] (0,0) rectangle (2.5,1.5);
+                \node[white] at (1.25,0.75) {\textbf{Gray}};
+            \end{tikzpicture}\\[4pt]
+            {\small\texttt{\#757575}}
+        \end{column}
+        \begin{column}{0.22\textwidth}
+            \centering
+            \begin{tikzpicture}
+                \fill[jqblue] (0,0) rectangle (2.5,1.5);
+                \node[white] at (1.25,0.75) {\textbf{Blue}};
+            \end{tikzpicture}\\[4pt]
+            {\small\texttt{\#4A90E2}}
+        \end{column}
+        \begin{column}{0.22\textwidth}
+            \centering
+            \begin{tikzpicture}
+                \fill[jqorange] (0,0) rectangle (2.5,1.5);
+                \node[white] at (1.25,0.75) {\textbf{Orange}};
+            \end{tikzpicture}\\[4pt]
+            {\small\texttt{\#E67E22}}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.6cm}
+    Use them directly: \texttt{\textbackslash color\{jqblue\}} or
+    \texttt{\textbackslash textcolor\{jqorange\}\{...\}}.
+
+    \vspace{0.2cm}
+    The \textbf{accent} color (default: {\color{jqaccent}blue})
+    controls the \texttt{problock} border and standard block titles.
+\end{frame}
+
+% ============================================================
+\section{Conclusion}
+% ============================================================
+
+\sectionframe{04}{Conclusion}
+
+\begin{frame}{Summary}
+    \begin{problock}{Jacquenetta at a glance}
+        \begin{itemize}
+            \item Minimalist design with a signature dark border
+            \item Clean typography: Helvetica body, serif math
+            \item Custom environments: \texttt{problock} and
+                  \texttt{highlightbox}
+            \item Section dividers with \texttt{\textbackslash sectionframe}
+            \item Configurable accent color and optional border
+        \end{itemize}
+    \end{problock}
+
+    \vspace{0.3cm}
+    \begin{highlightbox}
+        \centering
+        \textbf{Get started:}\quad
+        \texttt{\textbackslash usetheme\{Jacquenetta\}}
+    \end{highlightbox}
+\end{frame}
+
+\thanksframe
+
+\end{document}
