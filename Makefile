@@ -1,13 +1,14 @@
 LATEX    = pdflatex
-STY      = $(wildcard beamer*Jacquenetta.sty)
+STY      = $(wildcard src/*.sty)
 DESTDIR ?= $(shell kpsewhich -var-value=TEXMFHOME)
 INSTDIR  = $(DESTDIR)/tex/latex/jacquenetta
 
+export TEXINPUTS := $(shell pwd)/src:${TEXINPUTS}
+
 .PHONY: example clean install uninstall
 
-example: example.tex $(STY)
-	$(LATEX) example.tex
-	$(LATEX) example.tex
+example: example/example.tex $(STY)
+	cd example && $(LATEX) example.tex && $(LATEX) example.tex
 
 install: $(STY)
 	mkdir -p $(INSTDIR)
@@ -19,4 +20,4 @@ uninstall:
 	texhash $(DESTDIR)
 
 clean:
-	rm -f *.aux *.log *.nav *.out *.snm *.toc *.vrb *.fls *.fdb_latexmk *.synctex.gz *.pdf
+	cd example && rm -f *.aux *.log *.nav *.out *.snm *.toc *.vrb *.fls *.fdb_latexmk *.synctex.gz *.pdf

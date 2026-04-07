@@ -39,17 +39,17 @@ Jacquenetta is a clean, opinionated Beamer theme built for scientific talks in A
 
 ## Installation
 
-Copy the five `.sty` files into your project directory:
+Copy the five `.sty` files from `src/` into your project directory:
 
-```
-beamerthemeJacquenetta.sty
-beamercolorthemeJacquenetta.sty
-beamerfontthemeJacquenetta.sty
-beamerinnerthemeJacquenetta.sty
-beamerouterthemeJacquenetta.sty
+```bash
+cp src/*.sty /path/to/your/project/
 ```
 
-Or install system-wide by placing them in your local TeX tree (`~/texmf/tex/latex/jacquenetta/`) and running `texhash`.
+Or install system-wide:
+
+```bash
+make install   # copies to ~/texmf/tex/latex/jacquenetta/
+```
 
 ## Quick start
 
