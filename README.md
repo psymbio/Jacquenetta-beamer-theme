@@ -81,7 +81,7 @@ Or install system-wide by placing them in your local TeX tree (`~/texmf/tex/late
 ```
 
 ```bash
-pdflatex main.tex && pdflatex main.tex
+pdflatex example.tex && pdflatex example.tex
 ```
 
 ## Theme options
