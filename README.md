@@ -42,31 +42,3 @@ One of the specific references during development was the following NeurIPS 2025
 [https://neurips.cc/media/neurips-2025/Slides/109600_5E4Hp1V.pdf](https://neurips.cc/media/neurips-2025/Slides/109600_5E4Hp1V.pdf)
 
 The current theme does **not** reproduce that presentation or its visual design directly. It takes general design inspiration from it and develops those ideas into a reusable Beamer theme.
-
----
-
-## Design Philosophy
-
-Jacquenetta is intentionally opinionated.
-
-Rather than attempting to reproduce a particular slide deck, the theme extracts a few principles from modern scientific presentation design:
-
-1. **Strong typography**
-2. **Large whitespace**
-3. **Minimal navigation**
-4. **Restrained color usage**
-5. **Clear section hierarchy**
-6. **Readable mathematical notation**
-7. **Content-first layouts**
-
-The theme is intended to stay out of the way of the presentation rather than compete with it.
-
----
-
-## Attribution
-
-This project was inspired by the visual language of the **Jacquenetta Google Slides theme** and by modern scientific presentation design, including presentations from **NeurIPS 2025**.
-
-The LaTeX/Beamer implementation, theme architecture, typography configuration, color system, and presentation components in this repository are independently implemented.
-
-This project is not affiliated with or endorsed by Jacquenetta, NeurIPS, or the authors of the referenced presentation.
