@@ -1,6 +1,6 @@
 ## About
 
-**Jacquenetta** is a clean, opinionated Beamer theme designed for scientific presentations, particularly in AI, machine learning, statistics, biomedical engineering, and related fields.
+**JacquenettaModified** is a clean, opinionated Beamer theme designed for scientific presentations, particularly in AI, machine learning, statistics, biomedical engineering, and related fields.
 
 The theme combines ideas from several presentation styles, with particular inspiration from the **Jacquenetta Google Slides theme** and the visual language used in **NeurIPS 2025 conference presentations**.
 
@@ -39,7 +39,7 @@ This includes ideas such as:
 
 One of the specific references during development was the following NeurIPS 2025 presentation:
 
-[NeurIPS 2025 — Presentation 109600](https://neurips.cc/media/neurips-2025/Slides/109600_5E4Hp1V.pdf)
+[https://neurips.cc/media/neurips-2025/Slides/109600_5E4Hp1V.pdf](https://neurips.cc/media/neurips-2025/Slides/109600_5E4Hp1V.pdf)
 
 The current theme does **not** reproduce that presentation or its visual design directly. It takes general design inspiration from it and develops those ideas into a reusable Beamer theme.
 
