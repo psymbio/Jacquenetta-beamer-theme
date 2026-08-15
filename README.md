@@ -1,10 +1,10 @@
 <div align="center">
 
-# Jacquenetta
+# JacquenettaModified
 
 **A modern, minimalist Beamer theme for scientific presentations**
 
-`\usetheme{Jacquenetta}`
+`\usetheme{JacquenettaModified}`
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![LaTeX](https://img.shields.io/badge/Made%20with-LaTeX-1f425f.svg)](https://www.latex-project.org/)
@@ -26,7 +26,7 @@
 
 ---
 
-Jacquenetta is a clean, opinionated Beamer theme built for scientific talks in AI, ML, statistics, and related fields. Inspired by the Jacquenetta Google Slides aesthetic. No clutter, no navigation bars, just your content with a strong visual identity.
+JacquenettaModified is a clean, opinionated Beamer theme built for scientific talks in AI, ML, statistics, and related fields. Inspired by the JacquenettaModified Google Slides aesthetic. No clutter, no navigation bars, just your content with a strong visual identity.
 
 ## Highlights
 
@@ -48,14 +48,14 @@ cp src/*.sty /path/to/your/project/
 Or install system-wide:
 
 ```bash
-make install   # copies to ~/texmf/tex/latex/jacquenetta/
+make install   # copies to ~/texmf/tex/latex/JacquenettaModified/
 ```
 
 ## Quick start
 
 ```latex
 \documentclass[aspectratio=169]{beamer}
-\usetheme{Jacquenetta}
+\usetheme{JacquenettaModified}
 
 \title{Your Title}
 \subtitle{Your Subtitle}
@@ -87,9 +87,9 @@ pdflatex example.tex && pdflatex example.tex
 ## Theme options
 
 ```latex
-\usetheme[accent=jqorange]{Jacquenetta}   % orange accent
-\usetheme[noborder]{Jacquenetta}           % no signature border
-\usetheme[accent=teal, noborder]{Jacquenetta}
+\usetheme[accent=jqorange]{JacquenettaModified}   % orange accent
+\usetheme[noborder]{JacquenettaModified}           % no signature border
+\usetheme[accent=teal, noborder]{JacquenettaModified}
 ```
 
 | Option | Description | Default |
