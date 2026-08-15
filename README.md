@@ -1,162 +1,72 @@
-<div align="center">
+## About
 
-# JacquenettaModified
+**Jacquenetta** is a clean, opinionated Beamer theme designed for scientific presentations, particularly in AI, machine learning, statistics, biomedical engineering, and related fields.
 
-**A modern, minimalist Beamer theme for scientific presentations**
+The theme combines ideas from several presentation styles, with particular inspiration from the **Jacquenetta Google Slides theme** and the visual language used in **NeurIPS 2025 conference presentations**.
 
-`\usetheme{JacquenettaModified}`
+The current implementation is an **independent LaTeX/Beamer theme**, developed around these influences rather than being a direct port or modification of either presentation system.
 
-[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
-[![LaTeX](https://img.shields.io/badge/Made%20with-LaTeX-1f425f.svg)](https://www.latex-project.org/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Samuel%20Manchajm-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/samuel-manchajm/)
-
-</div>
+The goal is simple: **minimal decoration, strong typography, clear hierarchy, and emphasis on the content.**
 
 ---
 
-<div align="center">
-<img src="assets/preview_title.jpg" width="48%" />
-<img src="assets/preview_section.jpg" width="48%" />
-</div>
+## Inspiration
 
-<div align="center">
-<img src="assets/preview_blocks.jpg" width="48%" />
-<img src="assets/preview_math.jpg" width="48%" />
-</div>
+Jacquenetta draws visual inspiration from two main sources:
+
+### Jacquenetta Google Slides
+
+The project was originally inspired by the minimalist visual language of the Jacquenetta Google Slides theme, particularly its use of:
+
+* Strong typographic hierarchy
+* Minimal slide decoration
+* Large whitespace
+* Simple accent colors
+* Content-focused layouts
+
+### NeurIPS 2025 Presentations
+
+The theme is also inspired by the visual style of scientific presentations presented at **NeurIPS 2025**, particularly the clean, editorial approach commonly used in conference slides.
+
+This includes ideas such as:
+
+* Large, readable typography
+* Minimal navigation elements
+* Strong section hierarchy
+* Restrained use of color
+* Clear separation between text, figures, and supporting information
+* Presentation layouts optimized for scientific communication rather than decorative design
+
+One of the specific references during development was the following NeurIPS 2025 presentation:
+
+[NeurIPS 2025 — Presentation 109600](https://neurips.cc/media/neurips-2025/Slides/109600_5E4Hp1V.pdf)
+
+The current theme does **not** reproduce that presentation or its visual design directly. It takes general design inspiration from it and develops those ideas into a reusable Beamer theme.
 
 ---
 
-JacquenettaModified is a clean, opinionated Beamer theme built for scientific talks in AI, ML, statistics, and related fields. Inspired by the JacquenettaModified Google Slides aesthetic. No clutter, no navigation bars, just your content with a strong visual identity.
+## Design Philosophy
 
-## Highlights
+Jacquenetta is intentionally opinionated.
 
-- **Signature border** — thick dark frame on every slide, toggleable with `noborder`
-- **Unified callout system** — every block type (standard, alert, example, problock, highlightbox) shares the same left-border language
-- **Section dividers** — dark `\sectionframe` with large ghost number
-- **Accent color** — fully configurable with any xcolor name
-- **Serif math** — Helvetica body, Computer Modern for equations
-- **X/N footer** — page count bottom-right, nothing else
+Rather than attempting to reproduce a particular slide deck, the theme extracts a few principles from modern scientific presentation design:
 
-## Installation
+1. **Strong typography**
+2. **Large whitespace**
+3. **Minimal navigation**
+4. **Restrained color usage**
+5. **Clear section hierarchy**
+6. **Readable mathematical notation**
+7. **Content-first layouts**
 
-Copy the five `.sty` files from `src/` into your project directory:
+The theme is intended to stay out of the way of the presentation rather than compete with it.
 
-```bash
-cp src/*.sty /path/to/your/project/
-```
+---
 
-Or install system-wide:
+## Attribution
 
-```bash
-make install   # copies to ~/texmf/tex/latex/JacquenettaModified/
-```
+This project was inspired by the visual language of the **Jacquenetta Google Slides theme** and by modern scientific presentation design, including presentations from **NeurIPS 2025**.
 
-## Quick start
+The LaTeX/Beamer implementation, theme architecture, typography configuration, color system, and presentation components in this repository are independently implemented.
 
-```latex
-\documentclass[aspectratio=169]{beamer}
-\usetheme{JacquenettaModified}
-
-\title{Your Title}
-\subtitle{Your Subtitle}
-\author{Your Name}
-\institute{Your Institution}
-\date{\today}
-
-\begin{document}
-
-\titleframe
-
-\sectionframe{01}{Introduction}
-
-\begin{frame}{Your slide}
-  \begin{problock}{Key result}
-    Your content here.
-  \end{problock}
-\end{frame}
-
-\thanksframe
-
-\end{document}
-```
-
-```bash
-pdflatex example.tex && pdflatex example.tex
-```
-
-## Theme options
-
-```latex
-\usetheme[accent=jqorange]{JacquenettaModified}   % orange accent
-\usetheme[noborder]{JacquenettaModified}           % no signature border
-\usetheme[accent=teal, noborder]{JacquenettaModified}
-```
-
-| Option | Description | Default |
-|--------|-------------|---------|
-| `accent=<color>` | Any xcolor name or theme alias | `jqblue` |
-| `noborder` | Disable the signature dark border | off |
-
-## Institution logo
-
-Set a logo once in your preamble — it will appear automatically on the title page (bottom-right) and in the footer of every slide (bottom-left). If you don't set one, nothing changes.
-
-```latex
-\logo{\includegraphics[height=0.7cm]{logo.png}}
-```
-
-To show the logo only on the title page (not in the footer), clear it after `\titleframe`:
-
-```latex
-\titleframe
-\logo{}   % remove from footer slides
-```
-
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `\titleframe` | Title page (no border) with accent separator |
-| `\thanksframe` | Dark closing slide — "Thank you." |
-| `\thanksframe[Your text]` | Dark closing slide with custom text |
-| `\sectionframe{N}{Title}` | Dark section divider with ghost number |
-
-## Environments
-
-All environments use the same left-border visual language.
-
-```latex
-% Standard Beamer blocks — safe inside [fragile] frames
-\begin{block}{Title}         % accent border
-\begin{alertblock}{Title}    % orange border
-\begin{exampleblock}{Title}  % green border
-
-% Custom environments — require tcolorbox, avoid in [fragile] frames
-\begin{problock}{Title}      % accent border, richer content
-\begin{highlightbox}         % orange border, no title
-```
-
-## Color palette
-
-| Alias | Hex | Role |
-|-------|-----|------|
-| `jqdark` | `#121212` | Text, border, dark backgrounds |
-| `jqgray` | `#757575` | Subtitles, annotations |
-| `jqblue` | `#4A90E2` | Default accent |
-| `jqorange` | `#E67E22` | Alerts, highlightbox |
-| `jqgreen` | `#27AE60` | Example blocks |
-| `jqaccent` | — | Alias for the current accent color |
-
-Use anywhere: `\textcolor{jqorange}{...}` · `\color{jqaccent}`
-
-## Requirements
-
-Standard TeX Live 2020+ or MiKTeX 24+ installation. Required packages: `tikz`, `tcolorbox` (skins library), `helvet`, `microtype`, `setspace` — all included in a default distribution.
-
-## License
-
-This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
-
-You are free to use, adapt, and redistribute this theme — including for commercial purposes — as long as you credit the original author and share any modifications under the same license.
-
-2026 Samuel Manchajm
+This project is not affiliated with or endorsed by Jacquenetta, NeurIPS, or the authors of the referenced presentation.
